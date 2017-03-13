@@ -12,6 +12,10 @@ application.get('/', function(req, res) {
   res.json(items);
 });
 
+application.get('/posts/:postId', function(req, res) {
+  res.json(items.filter((obj) => obj.id == req.params.postId)[0]);
+});
+
 application.get('/about', function(req, res) {
   res.json(about);
 });
